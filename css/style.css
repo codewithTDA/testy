@@ -1,0 +1,372 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.3);
+  background: #000 url(../images/broken_noise.png) repeat;
+}
+
+#page {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a {
+  color: #ea272d;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #ea272d;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 30px;
+  font-style: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure {
+  color: #000;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+/* ::-webkit-selection {
+  color: #fff;
+  background: #ea272d;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #ea272d;
+} */
+
+::selection {
+  color: #fff;
+  background: #ea272d;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 101;
+  top: 0;
+  padding: 14px 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  /* height: 20vh; */
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navbar .scrolled {
+  background-image: url(../images/broken_noise.png) repeat;
+  top: -82px;
+
+}
+
+/* .nav-logo{
+  max-width: 82px;
+} */
+#logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: #fff !important;
+  text-align: center;
+}
+
+#logo a {
+  font-size: 42px;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.scrolled #logo {
+  color: #000 !important;
+}
+
+#logo a span {
+  color: #ea272d;
+}
+
+.menu ul {
+  padding: 0;
+  margin: 5px 0 0 0;
+}
+
+.menu ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+
+.menu ul li>a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.menu ul li a {
+  padding: 30px 15px;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.menu ul li a:hover,
+.menu ul li a:focus,
+.menu ul li a:active {
+  color: white;
+}
+
+.menu ul li.has-dropdown {
+  position: relative;
+}
+
+.menu ul li.has-dropdown .dropdown {
+  width: 140px;
+  -webkit-box-shadow: 0px 14px 16px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 14px 16px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 14px 16px -9px rgba(0, 0, 0, 0.75);
+  z-index: 102;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  text-align: left;
+  background: #ea272d;
+  padding: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: all .6s ease 0.1s;
+}
+
+.menu ul li.has-dropdown .dropdown:before {
+  bottom: 100%;
+  left: 40px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #ea272d;
+  border-width: 8px;
+  /* margin-left: -8px; */
+}
+
+.menu ul li.has-dropdown .dropdown li {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.menu-nav ul li.has-dropdown .dropdown li:last-child {
+  margin-bottom: 0;
+}
+
+.menu-nav ul li.has-dropdown .dropdown li a {
+  font-size: 17px;
+  padding: 2px 0;
+  display: block;
+  color: white;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.menu-nav ul li.has-dropdown .dropdown li a:hover {
+  color: #fff;
+
+}
+
+.menu-nav ul li.has-dropdown:hover a,
+.menu-nav ul li.has-dropdown:focus a {
+  color: #fff;
+}
+
+.menu ul li.has-dropdown:hover .dropdown {
+
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* .dropItemShow {
+  visibility: visible;
+  opacity: 1;
+} */
+
+/* .scrolled .menu-nav ul li.has-dropdown:hover a, .scrolled .menu-nav ul li.has-dropdown:focus a {
+  color: rgba(0, 0, 0, 0.7);
+} */
+#navbar ul li.active>a {
+  color: #fff;
+  position: relative;
+}
+
+#navbar ul li.active>a:after {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: #ea272d;
+  margin: 0 auto;
+}
+
+header {
+
+  width: 100%;
+  /* height: 100vh; */
+
+
+  background: url(../images/hero_1.jpeg) center/cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#header .header-overlay {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 
+#fh5co-counter,
+.fh5co-bg,
+#fh5co-gallery .fh5co-bg-img,
+#fh5co-gallery .fh5co-gallery_big,
+.product */
+.header-content {
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  position: relative;
+}
+
+.header-content h1,
+h2,
+a {
+
+  color: white;
+  text-align: center;
+}
+
+.header-content h2 a {
+  text-decoration: none;
+  position: relative;
+}
+
+.header-content h2 a::after {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ea272d;
+  margin: 0 auto;
+}
+
+.about-container {
+  width: 100%;
+  padding: 50px 20px 80px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  column-gap: 5vw;
+  align-items: center;
+}
+
+.aboutImg {
+  width: 100%;
+  /* background-image: url(../images/gallery_1.jpeg); */
+}
+
+.aboutImg img {
+  max-width: 45vw;
+  min-height: 400px;
+
+}
+
+.menu-cotainer {
+  width: 100vw;
+
+}
+
+.center-container {
+  width: 80vw;
+  margin: auto;
+}
+
+.mp-container {
+  width: 50%;
+  /* padding: 40px 0px 40px 80px; */
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.mp-container h2 {
+  text-align: start;
+}
